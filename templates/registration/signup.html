@@ -3,10 +3,21 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-<h2>Sign up</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form }}
-  <button type="submit">Sign Up</button>
-</form>
+    <div class="card">
+        <div class="card-header">
+            <H2>Sign Up</H2>
+        </div>
+        <div class="card-body">
+            <form class="px-4 py-3" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+        <div class="card-footer text-muted">
+            <a class="dropdown-item" href="{% url 'login' %}">You have an account? Sign In</a>
+        </div>
+    </div>
+
+
 {% endblock %}
